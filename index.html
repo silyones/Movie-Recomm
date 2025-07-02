@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dune-Vibes Movie Finder 🍿✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .anime-girl {
+      width: 300px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .input-section {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 1000px;
+    }
+
+    .movie-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .movie-card img {
+      width: 100%;
+      border-radius: 12px;
+      height: 320px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      color: #ffbf00;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <img src="image/qq.jpg" class="anime-girl" alt="anime girl" />
+  <h1>🎀 Find Movies Like Dune 🎀</h1>
+
+  <div class="input-section">
+    <input type="text" id="query" placeholder="Describe a movie vibe (e.g., desert planet war)">
+    <button onclick="searchMovies()">Search</button>
+  </div>
+
+  <div class="results" id="results">
+    <!-- Movie results will appear here -->
+  </div>
+
+  <script>
+    function searchMovies() {
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = '<p>🔍 Searching for cute similar movies...</p>';
+
+      // Placeholder for real connection
+      setTimeout(() => {
+        resultsDiv.innerHTML = `
+          <div class="movie-card">
+            <img src="image/blade.jpg" alt="Blade Runner">
+            <h3>Blade Runner</h3>
+            <p>Genre: Sci-Fi</p>
+            <p>Year: 1982</p>
+            <p class="rating">⭐ 8.1</p>
+          </div>
+          <div class="movie-card">
+            <img src="image/matrix.jpg" alt="The Matrix">
+            <h3>The Matrix</h3>
+            <p>Genre: Sci-Fi</p>
+            <p>Year: 1999</p>
+            <p class="rating">⭐ 8.7</p>
+          </div>
+          <div class="movie-card">
+            <img src="image/starwars.jpg" alt="Star Wars">
+            <h3>Star Wars: A New Hope</h3>
+            <p>Genre: Sci-Fi</p>
+            <p>Year: 1977</p>
+            <p class="rating">⭐ 8.6</p>
+          </div>
+        `;
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
